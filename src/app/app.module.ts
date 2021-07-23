@@ -4,24 +4,41 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
+// esto es para el manejo de formularios, angular no siempre lo importa automatico
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
+// importar componentes
+import { NavigationComponent } from './components/navigation/navigation.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { WelcomeComponent } from './components/welcome/welcome.component';
+import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/register/register.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 
 //importaciones personalizadas
-import { TestService } from "./services/test.service";
-import { TestComponent } from './components/test/test.component';
+// servicios
+import { WelcomeService } from './services/welcome.service';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TestComponent
+    NavigationComponent,
+    FooterComponent,
+    WelcomeComponent,
+    LoginComponent,
+    RegisterComponent,
+    DashboardComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [
-    TestService
+    WelcomeService
   ],
   bootstrap: [AppComponent]
 })
