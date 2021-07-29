@@ -19,6 +19,14 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 //importaciones personalizadas
 // servicios
 import { WelcomeService } from './services/welcome.service';
+import { GerenciaComponent } from './components/gerencia/gerencia.component';
+import { TransparenciaComponent } from './components/transparencia/transparencia.component';
+import { ConvocatoriasComponent } from './components/convocatorias/convocatorias.component';
+import { ServiciosPublicosComponent } from './components/servicios-publicos/servicios-publicos.component';
+import { DistritoComponent } from './components/distrito/distrito.component';
+import { NoticiasComponent } from './components/noticias/noticias.component';
+import { MunicipalidadComponent } from './components/municipalidad/municipalidad.component';
+import { QuienesSomosComponent } from './components/quienes-somos/quienes-somos.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +37,14 @@ import { WelcomeService } from './services/welcome.service';
     LoginComponent,
     RegisterComponent,
     DashboardComponent,
+    GerenciaComponent,
+    TransparenciaComponent,
+    ConvocatoriasComponent,
+    ServiciosPublicosComponent,
+    DistritoComponent,
+    NoticiasComponent,
+    MunicipalidadComponent,
+    QuienesSomosComponent,
   ],
   imports: [
     BrowserModule,
