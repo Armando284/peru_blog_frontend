@@ -18,7 +18,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 //importaciones personalizadas
 // servicios
-import { WelcomeService } from './services/welcome.service';
+import { CampaignService } from './services/campaign.service';
 import { GerenciaComponent } from './components/gerencia/gerencia.component';
 import { TransparenciaComponent } from './components/transparencia/transparencia.component';
 import { ConvocatoriasComponent } from './components/convocatorias/convocatorias.component';
@@ -54,7 +54,7 @@ import { QuienesSomosComponent } from './components/quienes-somos/quienes-somos.
     ReactiveFormsModule
   ],
   providers: [
-    WelcomeService
+    CampaignService
   ],
   bootstrap: [AppComponent]
 })

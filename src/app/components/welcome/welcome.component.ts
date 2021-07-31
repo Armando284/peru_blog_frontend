@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { WelcomeService } from 'src/app/services/welcome.service';
-import { UserService } from 'src/app/services/user.service';
-
+import { CampaignService } from 'src/app/services/campaign.service';
+import { Campaign } from 'src/app/interfaces/campaign';
 @Component({
   selector: 'app-welcome',
   templateUrl: './welcome.component.html',
@@ -10,23 +9,25 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class WelcomeComponent implements OnInit {
 
-  postList: any[];
+  campaignList: Campaign[];
 
-  constructor(private _welcomeService: WelcomeService, private _userService: UserService) {
-    this.postList = [];
-    _welcomeService.getPosts().then(data => this.postList = data);
+  constructor(private _campaignService: CampaignService) {
+    this.campaignList = [];
   }
 
   ngOnInit(): void {
-    this.getUsers();
+    this.getCampaigns();
   }
 
-  getUsers() {
-    this._userService.getUsers().subscribe(
-      res => console.log(res),
+  getCampaigns() {
+    this._campaignService.getCampaigns().subscribe(
+      res => {
+        console.log(res);
+        this.campaignList = res.campaigns;
+        console.log(this.campaignList);
+
+      },
       err => console.log(err)
-    )
+    );
   }
-
-
 }

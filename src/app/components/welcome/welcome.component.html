@@ -9,21 +9,27 @@
     <span>Aqui vamos a mostrar las vistas rapidas de los posts</span>
     <br />
     <div class="max-w-content mx-auto">
-      <div *ngIf="postList.length > 0">
-        <div *ngFor="let item of postList" class="card card-body my-5">
+      <div *ngIf="campaignList.length > 0">
+        <div *ngFor="let item of campaignList" class="card card-body my-5">
           <h3 class="text-dark">{{ item.title | uppercase }}</h3>
-          <p class="text-body">{{ item.body }}</p>
-          <h5 class="fw-light fs-italic">Autor: {{ item.author }}</h5>
+          <p class="text-body">{{ item.body | slice: 0:80 }}</p>
+          <h5 class="fw-light fs-italic">Autor: {{ item.authorID }}</h5>
           <p class="fw-light text-muted">
             Creado: {{ item.createdAt | date: "y-m-d" }}
-            <span *ngIf="item.updatedAt > item.createdAt">
+            <span
+              *ngIf="
+                item.updatedAt &&
+                item.createdAt &&
+                item.updatedAt > item.createdAt
+              "
+            >
               | Actualizado: {{ item.updatedAt | date: "y-m-d" }}
             </span>
           </p>
         </div>
       </div>
-      <span *ngIf="postList.length === 0" class="text-secondary">
-        No hay posts para mostrar
+      <span *ngIf="campaignList.length === 0" class="text-secondary">
+        No hay campañas para mostrar
       </span>
     </div>
   </section>
