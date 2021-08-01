@@ -12,12 +12,12 @@ export class CampaignService {
 
   constructor(private http: HttpClient) { }
 
-  getCampaigns(): Observable<any> {
-    return this.http.get(`${this.BASE_URL}`);
+  getCampaigns(): Observable<{ message?: string, campaigns: Campaign[] }> {
+    return this.http.get<{ message?: string, campaigns: Campaign[] }>(`${this.BASE_URL}`);
   }
 
-  getCampaign(id: string): Observable<Campaign> {
-    return this.http.get<Campaign>(`${this.BASE_URL}/${id}`)
+  getCampaign(id: string): Observable<{ message?: string, campaign: Campaign }> {
+    return this.http.get<{ message?: string, campaign: Campaign }>(`${this.BASE_URL}/${id}`)
   }
 
   createCampaign(campaign: Campaign): Observable<Campaign> {

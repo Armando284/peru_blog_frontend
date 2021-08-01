@@ -27,6 +27,7 @@ import { DistritoComponent } from './components/distrito/distrito.component';
 import { NoticiasComponent } from './components/noticias/noticias.component';
 import { MunicipalidadComponent } from './components/municipalidad/municipalidad.component';
 import { QuienesSomosComponent } from './components/quienes-somos/quienes-somos.component';
+import { CampaignComponent } from './components/campaign/campaign.component';
 
 @NgModule({
   declarations: [
@@ -45,6 +46,7 @@ import { QuienesSomosComponent } from './components/quienes-somos/quienes-somos.
     NoticiasComponent,
     MunicipalidadComponent,
     QuienesSomosComponent,
+    CampaignComponent,
   ],
   imports: [
     BrowserModule,

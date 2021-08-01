@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CampaignService } from 'src/app/services/campaign.service';
 import { Campaign } from 'src/app/interfaces/campaign';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-welcome',
   templateUrl: './welcome.component.html',
@@ -11,7 +12,7 @@ export class WelcomeComponent implements OnInit {
 
   campaignList: Campaign[];
 
-  constructor(private _campaignService: CampaignService) {
+  constructor(private _campaignService: CampaignService, private router: Router) {
     this.campaignList = [];
   }
 
@@ -22,12 +23,13 @@ export class WelcomeComponent implements OnInit {
   getCampaigns() {
     this._campaignService.getCampaigns().subscribe(
       res => {
-        console.log(res);
         this.campaignList = res.campaigns;
-        console.log(this.campaignList);
-
       },
       err => console.log(err)
     );
+  }
+
+  readMore(id: string) {
+    this.router.navigate(['/campaign', id])
   }
 }

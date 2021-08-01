@@ -12,8 +12,8 @@
       <div *ngIf="campaignList.length > 0">
         <div *ngFor="let item of campaignList" class="card card-body my-5">
           <h3 class="text-dark">{{ item.title | uppercase }}</h3>
-          <p class="text-body">{{ item.body | slice: 0:80 }}</p>
-          <h5 class="fw-light fs-italic">Autor: {{ item.authorID }}</h5>
+          <p class="text-body">{{ item.body | slice: 0:320 }}</p>
+          <h6 class="fw-light fs-italic">Autor: {{ item.authorID }}</h6>
           <p class="fw-light text-muted">
             Creado: {{ item.createdAt | date: "y-m-d" }}
             <span
@@ -26,6 +26,13 @@
               | Actualizado: {{ item.updatedAt | date: "y-m-d" }}
             </span>
           </p>
+          <button
+            *ngIf="item._id"
+            (click)="readMore(item._id)"
+            class="btn btn-outline-primary"
+          >
+            Leer más ...
+          </button>
         </div>
       </div>
       <span *ngIf="campaignList.length === 0" class="text-secondary">

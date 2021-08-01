@@ -12,6 +12,7 @@ import { DistritoComponent } from './components/distrito/distrito.component';
 import { NoticiasComponent } from './components/noticias/noticias.component';
 import { MunicipalidadComponent } from './components/municipalidad/municipalidad.component';
 import { QuienesSomosComponent } from './components/quienes-somos/quienes-somos.component';
+import { CampaignComponent } from './components/campaign/campaign.component';
 
 const routes: Routes = [
   { path: '', component: WelcomeComponent },
@@ -26,6 +27,7 @@ const routes: Routes = [
   { path: 'noticias', component: NoticiasComponent },
   { path: 'municipalidad', component: MunicipalidadComponent },
   { path: 'quienes-somos', component: QuienesSomosComponent },
+  { path: 'campaign/:id', component: CampaignComponent },
   { path: '**', pathMatch: 'full', redirectTo: '' }
 ];
 
