@@ -6,11 +6,12 @@
     </div>
   </section>
   <section id="posts">
-    <span>Aqui vamos a mostrar las vistas rapidas de los posts</span>
-    <br />
     <div class="max-w-content mx-auto">
       <div *ngIf="campaignList.length > 0">
-        <div *ngFor="let item of campaignList" class="card card-body my-5">
+        <div
+          *ngFor="let item of campaignList"
+          class="card card-body my-5 campaign-card"
+        >
           <h3 class="text-dark">{{ item.title | uppercase }}</h3>
           <p class="text-body">{{ item.body | slice: 0:320 }}</p>
           <h6 class="fw-light fs-italic">Autor: {{ item.authorID }}</h6>

@@ -1,20 +1,22 @@
-<h3>Titulo: {{ campaign.title }}</h3>
-<p>{{ campaign.body }}</p>
-<span>Autor: {{ campaign.authorID }}</span>
-<br />
-<span
-  *ngIf="
-    campaign.createdAt &&
-    campaign.updatedAt &&
-    campaign.createdAt === campaign.updatedAt
-  "
-  >Creado: {{ campaign.createdAt | date: "y-m-d" }}</span
->
-<span
-  *ngIf="
-    campaign.createdAt &&
-    campaign.updatedAt &&
-    campaign.createdAt !== campaign.updatedAt
-  "
-  >Actualizado: {{ campaign.updatedAt | date: "y-m-d" }}</span
->
+<div class="container">
+  <h3>Titulo: {{ campaign.title }}</h3>
+  <p>{{ campaign.body }}</p>
+  <span>Autor: {{ campaign.authorID }}</span>
+  <br />
+  <span
+    *ngIf="
+      campaign.createdAt &&
+      campaign.updatedAt &&
+      campaign.createdAt === campaign.updatedAt
+    "
+    >Creado: {{ campaign.createdAt | date: "y-m-d" }}</span
+  >
+  <span
+    *ngIf="
+      campaign.createdAt &&
+      campaign.updatedAt &&
+      campaign.createdAt !== campaign.updatedAt
+    "
+    >Actualizado: {{ campaign.updatedAt | date: "y-m-d" }}</span
+  >
+</div>

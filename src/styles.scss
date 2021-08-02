@@ -5,6 +5,7 @@
   --bg-body: rgb(211, 211, 211);
   --bg-app: rgb(255, 255, 255);
   --dark-border: rgb(143, 143, 143);
+  --shadow-md: rgba(0, 0, 0, 0.5) 0 5px 10px;
 }
 body {
   background: var(--bg-body);
@@ -60,4 +61,11 @@ body {
   width: 100%;
   height: 100%;
   padding: 40px;
+}
+.campaign-card {
+  transition: all 0.3s ease-in-out;
+}
+.campaign-card:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-md);
 }
